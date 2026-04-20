@@ -139,3 +139,9 @@ for (int i = 1; i <= 10; i++)
     }
     Console.WriteLine($"Count: {i}");
 }
+
+//ternary operator...
+int number1 = 10;
+int number2 = 20;
+string result = (number1 > number2) ? "Number1 is greater" : "Number2 is greater";
+Console.WriteLine(result);
