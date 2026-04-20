@@ -1,0 +1,14 @@
+/Users/sugaldarlami/C#/ControlStatement/bin/Debug/net10.0/Control statements
+/Users/sugaldarlami/C#/ControlStatement/bin/Debug/net10.0/Control statements.deps.json
+/Users/sugaldarlami/C#/ControlStatement/bin/Debug/net10.0/Control statements.runtimeconfig.json
+/Users/sugaldarlami/C#/ControlStatement/bin/Debug/net10.0/Control statements.dll
+/Users/sugaldarlami/C#/ControlStatement/bin/Debug/net10.0/Control statements.pdb
+/Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/Control statements.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/Control statements.AssemblyInfoInputs.cache
+/Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/Control statements.AssemblyInfo.cs
+/Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/Control statements.csproj.CoreCompileInputs.cache
+/Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/Control statements.dll
+/Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/refint/Control statements.dll
+/Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/Control statements.pdb
+/Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/Control statements.genruntimeconfig.cache
+/Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/ref/Control statements.dll
