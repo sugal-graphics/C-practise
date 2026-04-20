@@ -1,4 +1,6 @@
 ﻿public struct student
+
+
 {
     public string FullName;
     public int Age;
@@ -8,28 +10,37 @@
     public string University;
     public long PhoneNumber;
 
+    public student(string fullName, int age, string address, string emailAddress, int semester, string university, long phoneNumber)
+    {
+        FullName = fullName;
+        Age = age;
+        Address = address;
+        EmailAddress = emailAddress;
+        Semester = semester;
+        University = university;
+        PhoneNumber = phoneNumber;
+    }
+    public void Display()
+    {
+        Console.WriteLine("Student Details:");
+        Console.WriteLine("----------------");
+        Console.WriteLine($"Full Name: {FullName}");
+        Console.WriteLine($"Age: {Age}");
+        Console.WriteLine($"Address: {Address}");
+        Console.WriteLine($"Email Address: {EmailAddress}");
+        Console.WriteLine($"Semester: {Semester}");
+        Console.WriteLine($"University: {University}");
+        Console.WriteLine($"Phone Number: {PhoneNumber}");
+        Console.WriteLine("----------------");
+    }
 }
+
 class Program
 {
     static void Main(string[] args)
     {
-        student Details;
-        Details.FullName = "Sugal Darlami";
-        Details.Age = 19;
-        Details.Address = "Dingarnagar, Tiltoama-4";
-        Details.EmailAddress = "sugaldarlami@gmail.com";
-        Details.Semester = 2;
-        Details.University = "ISMT, UNIVERSITY OF SUNDERLAND";
-        Details.PhoneNumber = 9767022003;
-        Console.WriteLine("Student Details:");
-        Console.WriteLine("----------------");
-        Console.WriteLine($"Full Name: {Details.FullName}");
-        Console.WriteLine($"Age: {Details.Age}");
-        Console.WriteLine($"Address: {Details.Address}");
-        Console.WriteLine($"Email Address: {Details.EmailAddress}");
-        Console.WriteLine($"Semester: {Details.Semester}");
-        Console.WriteLine($"University: {Details.University}");
-        Console.WriteLine($"Phone Number: {Details.PhoneNumber}");
-        Console.WriteLine("----------------");
+        student details = new student("Sugal", 19, "Dingarnagar, Tiltoama-4", "sugaldarlami@gmail.com", 2, "ISMT, UNIVERSITY OF SUNDERLAND", 9767022003);
+        details.Display();
+
     }
 }
