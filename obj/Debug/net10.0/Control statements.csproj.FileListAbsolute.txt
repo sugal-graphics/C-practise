@@ -12,3 +12,4 @@
 /Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/Control statements.pdb
 /Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/Control statements.genruntimeconfig.cache
 /Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/ref/Control statements.dll
+/Users/sugaldarlami/C#/ControlStatement/obj/Debug/net10.0/Control statements.sourcelink.json
