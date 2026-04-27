@@ -1,46 +1,61 @@
-﻿public struct student
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
-
+class HashTable
 {
-    public string FullName;
-    public int Age;
-    public string Address;
-    public string EmailAddress;
-    public int Semester;
-    public string University;
-    public long PhoneNumber;
 
-    public student(string fullName, int age, string address, string emailAddress, int semester, string university, long phoneNumber)
+    public int size = 10;
+    public List<int>[] table;
+
+    public HashTable()
     {
-        FullName = fullName;
-        Age = age;
-        Address = address;
-        EmailAddress = emailAddress;
-        Semester = semester;
-        University = university;
-        PhoneNumber = phoneNumber;
+        table = new List<int>[size];
+        for (int i = 0; i < size; i++)
+        {
+            table[i] = new List<int>();
+        }
     }
+
+    public int Hash(int key)
+    {
+        return key % size;
+    }
+
+    public void Insert(int key)
+    {
+        int index = Hash(key);
+        Console.WriteLine($"Inserting {key} at index {index}");
+        table[index].Add(key);
+    }
+
     public void Display()
     {
-        Console.WriteLine("Student Details:");
-        Console.WriteLine("----------------");
-        Console.WriteLine($"Full Name: {FullName}");
-        Console.WriteLine($"Age: {Age}");
-        Console.WriteLine($"Address: {Address}");
-        Console.WriteLine($"Email Address: {EmailAddress}");
-        Console.WriteLine($"Semester: {Semester}");
-        Console.WriteLine($"University: {University}");
-        Console.WriteLine($"Phone Number: {PhoneNumber}");
-        Console.WriteLine("----------------");
+        Console.WriteLine("Hash Table: ");
+        for (int i = 0; i < size; i++)
+        {
+            Console.Write(i + ":");
+            foreach (var item in table[i])
+            {
+                Console.Write(item + " ");
+
+            }
+            Console.WriteLine();
+        }
     }
 }
-
 class Program
-{
-    static void Main(string[] args)
-    {
-        student details = new student("Sugal", 19, "Dingarnagar, Tiltoama-4", "sugaldarlami@gmail.com", 2, "ISMT, UNIVERSITY OF SUNDERLAND", 9767022003);
-        details.Display();
 
+{
+
+    static void Main()
+
+    {
+        HashTable ht = new HashTable();
+        ht.Insert(23);
+        ht.Insert(33);
+        ht.Insert(24);
+
+        ht.Display();
     }
 }
