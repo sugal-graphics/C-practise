@@ -1,61 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
-class HashTable
+namespace Practise
 {
-
-    public int size = 10;
-    public List<int>[] table;
-
-    public HashTable()
+    class Program
     {
-        table = new List<int>[size];
-        for (int i = 0; i < size; i++)
+        static void Main(string[] args)
         {
-            table[i] = new List<int>();
+            int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            LinearSearch(arr, 4);
         }
-    }
 
-    public int Hash(int key)
-    {
-        return key % size;
-    }
-
-    public void Insert(int key)
-    {
-        int index = Hash(key);
-        Console.WriteLine($"Inserting {key} at index {index}");
-        table[index].Add(key);
-    }
-
-    public void Display()
-    {
-        Console.WriteLine("Hash Table: ");
-        for (int i = 0; i < size; i++)
+        static void LinearSearch(int[] array, int data)
         {
-            Console.Write(i + ":");
-            foreach (var item in table[i])
+            for (int i = 0; i < array.Length; i++)
             {
-                Console.Write(item + " ");
+                if (array[i] == data)
+                {
+                    Console.WriteLine("Data found succesful...");
+                    return;
+                }
+
 
             }
-            Console.WriteLine();
+            Console.WriteLine("Data not found");
         }
-    }
-}
-class Program
-
-{
-
-    static void Main()
-
-    {
-        HashTable ht = new HashTable();
-        ht.Insert(23);
-        ht.Insert(33);
-        ht.Insert(24);
-
-        ht.Display();
     }
 }
