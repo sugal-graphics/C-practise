@@ -7,28 +7,28 @@ namespace Practise
         static void Main(string[] args)
         {
             int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            BinarySearch(arr, 4);
+            InterpolationSearch(arr, 6);
         }
 
-        static void BinarySearch(int[] array, int data)
+        static void InterpolationSearch(int[] array, int data)
         {
 
             int low = 0, high = array.Length - 1;
-            while (low <= high)
+            while (low <= high && data >= array[low] && data <= array[high])
             {
-                int mid = (low + high) / 2;
-                if (array[mid] == data)
+                int pos = low + ((data - array[low]) * (high - low)) / (array[high] - array[low]);
+                if (array[pos] == data)
                 {
-                    Console.WriteLine("Data found suceesful..");
+                    Console.WriteLine("Data found succesful..");
                     return;
                 }
-                else if (array[mid] > data)
+                if (array[pos] < data)
                 {
-                    high = mid - 1;
+                    low = pos + 1;
                 }
                 else
                 {
-                    low = mid + 1;
+                    high = pos - 1;
                 }
             }
             Console.WriteLine("Data not found..");
