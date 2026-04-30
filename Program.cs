@@ -7,22 +7,31 @@ namespace Practise
         static void Main(string[] args)
         {
             int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            LinearSearch(arr, 4);
+            BinarySearch(arr, 4);
         }
 
-        static void LinearSearch(int[] array, int data)
+        static void BinarySearch(int[] array, int data)
         {
-            for (int i = 0; i < array.Length; i++)
+
+            int low = 0, high = array.Length - 1;
+            while (low <= high)
             {
-                if (array[i] == data)
+                int mid = (low + high) / 2;
+                if (array[mid] == data)
                 {
-                    Console.WriteLine("Data found succesful...");
+                    Console.WriteLine("Data found suceesful..");
                     return;
                 }
-
-
+                else if (array[mid] > data)
+                {
+                    high = mid - 1;
+                }
+                else
+                {
+                    low = mid + 1;
+                }
             }
-            Console.WriteLine("Data not found");
+            Console.WriteLine("Data not found..");
         }
     }
 }
