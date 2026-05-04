@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 
 namespace Practise
 {
@@ -6,32 +7,72 @@ namespace Practise
     {
         static void Main(string[] args)
         {
-            int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            InterpolationSearch(arr, 6);
+            int[] arr = { 12, 13, 35, 8, 32, 17 };
+
+
+            MS(arr, 0, arr.Length - 1);
+
+            Console.WriteLine("Sorted array:");
+
+            foreach (int num in arr)
+
+            {
+
+                Console.Write(num + " ");
+
+            }
         }
 
-        static void InterpolationSearch(int[] array, int data)
+        static void MS(int[] arr, int S, int E)
         {
-
-            int low = 0, high = array.Length - 1;
-            while (low <= high && data >= array[low] && data <= array[high])
+            if (S < E)
             {
-                int pos = low + ((data - array[low]) * (high - low)) / (array[high] - array[low]);
-                if (array[pos] == data)
+                int m = S + (E - S) / 2;
+                MS(arr, S, m);
+                MS(arr, m + 1, E);
+                Merge(arr, S, m, E);
+            }
+
+
+        }
+        static void Merge(int[] arr, int S, int m, int E)
+        {
+            int[] tempArr = new int[E - S + 1];
+            int i = S;
+            int j = m + 1;
+            int k = 0;
+
+            while (i <= m && j <= E)
+            {
+
+                if (arr[i] < arr[j])
                 {
-                    Console.WriteLine("Data found succesful..");
-                    return;
-                }
-                if (array[pos] < data)
-                {
-                    low = pos + 1;
+                    tempArr[k++] = arr[i++];
+
                 }
                 else
                 {
-                    high = pos - 1;
+                    tempArr[k++] = arr[j++];
+
                 }
+
             }
-            Console.WriteLine("Data not found..");
+            while (i <= m)
+            {
+                tempArr[k++] = arr[i++];
+
+            }
+            while (j <= E)
+            {
+                tempArr[k++] = arr[j++];
+            }
+
+            for (int idx = 0; idx < tempArr.Length; idx++)
+            {
+                arr[idx + S] = tempArr[idx];
+            }
         }
+
+
     }
 }
