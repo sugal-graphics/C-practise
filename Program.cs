@@ -10,7 +10,7 @@ namespace Practise
             int[] arr = { 12, 13, 35, 8, 32, 17 };
 
 
-            MS(arr, 0, arr.Length - 1);
+            QS(arr, 0, arr.Length - 1);
 
             Console.WriteLine("Sorted array:");
 
@@ -20,57 +20,44 @@ namespace Practise
 
                 Console.Write(num + " ");
 
+
             }
         }
 
-        static void MS(int[] arr, int S, int E)
+        static void QS(int[] arr, int S, int E)
         {
             if (S < E)
             {
-                int m = S + (E - S) / 2;
-                MS(arr, S, m);
-                MS(arr, m + 1, E);
-                Merge(arr, S, m, E);
+                int Pi = Partation(arr, S, E);
+                QS(arr, S, Pi - 1);
+                QS(arr, Pi + 1, E);
+
             }
 
 
         }
-        static void Merge(int[] arr, int S, int m, int E)
+        static int Partation(int[] arr, int S, int E)
         {
-            int[] tempArr = new int[E - S + 1];
-            int i = S;
-            int j = m + 1;
-            int k = 0;
+            int pivot = arr[E];
+            int i = S - 1;
 
-            while (i <= m && j <= E)
+            for (int j = S; j < E; j++)
             {
-
-                if (arr[i] < arr[j])
+                if (arr[j] < pivot)
                 {
-                    tempArr[k++] = arr[i++];
-
+                    i++;
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
                 }
-                else
-                {
-                    tempArr[k++] = arr[j++];
-
-                }
-
             }
-            while (i <= m)
-            {
-                tempArr[k++] = arr[i++];
+            int temp1 = arr[i + 1];
+            arr[i + 1] = arr[E];
+            arr[E] = temp1;
+            return i + 1;
 
-            }
-            while (j <= E)
-            {
-                tempArr[k++] = arr[j++];
-            }
 
-            for (int idx = 0; idx < tempArr.Length; idx++)
-            {
-                arr[idx + S] = tempArr[idx];
-            }
+
         }
 
 
